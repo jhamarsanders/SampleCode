@@ -1,0 +1,22 @@
+using Sabio.Web.Models.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Sabio.Web.Controllers
+{
+    [RoutePrefix("Timecards")]
+    public class TimecardsController : BaseController
+    {
+        // GET: Timecards
+        [Route("{id:int}")]
+        public ActionResult Index(int id)
+        {
+            TimecardViewModel timecard = new TimecardViewModel();
+            timecard.TimecardEmployeeId = id;
+            return View(timecard);
+        }
+    }
+}
